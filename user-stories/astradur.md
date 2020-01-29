@@ -1,6 +1,8 @@
 # User Stories - Ástráður
 
-1. As a user, I want to be able to search for day tours going from the city I am in. So I don’t have to search through tours going from other cities.
+1. ```diff
++ text in green
+As a user, I want to be able to search for day tours going from the city I am in. So I don’t have to search through tours going from other cities.```
 2. As a user, I want to filter the tours I search for by their type. For example, is it a bus tour, walking tour, jeep tour, boat tours etc. Because it would make my choice much easier.
 3. As a user, I would want to be able to search for tours based on the reviews. Because I want to make the most of my tour.
 4. As a user, I would like to be able to set a price range, because I might be travelling on a budget.
