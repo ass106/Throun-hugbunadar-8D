@@ -9,6 +9,6 @@
 7. As a user, I would like to be able to search by attractions. Because there are specific places I want to see.
 8. As a webmaster, I want to be able to add/remove tour listings in case they are discontinued.
 9. As a tour provider, I want to be able to set the availabilities manually. In case we have to make reservations without booking.
-10. As a tour provider, I want to receive payment straight away.
-11. As a user, I want to be able to pay for my tours straight away.
-12. As a user, I want to receive my tour ticket via email or print out straight away.
+10. As a tour provider, I want to receive payment straight away. Because I would like to be paid beforehand.
+11. As a user, I want to be able to pay for my tours straight away. Because I would like to pay beforehand.
+12. As a user, I want to receive my tour ticket via email or print out straight away. Because I want to have all of my trip details ready.
