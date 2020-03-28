@@ -1,0 +1,42 @@
+# Tour
+operator : Operator
+date : Date
+startTime : String
+duration : Time
+region : String
+activities : String[]
+attractions : String[]
+city : String
+availability : int
+hotelPickup : Boolean
+itinerary : String[]
+equipment : String[]
+difficulty : int
+minAge : int
+languages : String[]
+included : String[]
+exluded : String[]
+otherInfo : String
+price : double
+
+# Booking
+bookingId : String
+user : User
+tour : Tour
+pax : int
+paid : Boolean
+
+# User 
+userId : String
+name : String
+email : String
+country : String
+phoneNr : String
+age : int
+
+# Operator
+name : String
+ssn : String
+address : String
+email : String
+cc: String[]
