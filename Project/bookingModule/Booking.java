@@ -6,4 +6,5 @@ public class Booking {
     Tour tour;
     int pax;
     Boolean paid;
+
 }
