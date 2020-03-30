@@ -2,6 +2,7 @@ package bookingModule;
 
 public class Tour {
     Operator operator;
+    String tourName;
     Date date;
     String startTime;
     Time duration;
@@ -11,7 +12,9 @@ public class Tour {
     String city;
     int availability;
 }
+
 public class TourDetails {
+    String tourId; // Samansafn af operator og tourName = amazingtours.northernlights
     Boolean hotelPickup;
     String[] itinerary;
     String[] equipment;
