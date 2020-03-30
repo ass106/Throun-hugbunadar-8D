@@ -1,0 +1,8 @@
+# Database Stuff
+
+## Tours DB
+
+| Operator      | Date       | StartTime | Duration | Region          | Activities              | Attractions               | City      | Availability | HotelPickup | Itinerary                                                                                                                         | Equipment | Difficulty | MinAge | Languages                  | Included        | Excluded                    | OtherInfo | Price |
+|---------------|------------|-----------|----------|-----------------|-------------------------|---------------------------|-----------|--------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------|-----------|------------|--------|----------------------------|-----------------|-----------------------------|-----------|-------|
+| Amazing Tours | 30/03/2020 | 12:00     | 3        | Gullbringusýsla | Buggy riding, City Walk | Heiðmörk, Hallgrímskirkja | Reykjavík | 15           | TRUE        | Buggy riding through Heiðmörk then a short walk through downtown Reykjavík.                                                       | NULL      | 1          | 18     | Icelandic, English, German | Buggy ride, Bus | Warm clothing, food, drinks | NULL      | 15000 |
+| Amazing Tours | 31/03/2020 | 22:00     | 3        | Gullbringusýsla | Northern lights         | Northern Lights           | Reykjavík | 35           | TRUE        | Hunt for the Northern Lights! Our bus driver will drive a short distance out of the city. Way varies depending on cloud coverage. | NULL      | 1          | 10     | Icelandic, English, German | Bus, Kleinur    | Warm clothing, food, drinks | NULL      | 9900  |
