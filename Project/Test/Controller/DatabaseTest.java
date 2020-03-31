@@ -16,7 +16,7 @@ public class DatabaseTest {
 
     @Before
     public void setUp() {
-
+        int x = 0;
     }
 
     @After
