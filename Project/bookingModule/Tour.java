@@ -1,13 +1,14 @@
-package bookingModule;
+package BookingModule;
 
+import BookingModule.Operator;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Tour {
     private Operator operator;
     private String tourName;
     private String tourId;
     private Date date;
-    private Time startTime;
     private int duration;
     private String region;
     private ArrayList<String> activities;
@@ -25,8 +26,8 @@ public class Tour {
     private String otherInfo;
     private Double price;
 
-    public Tour(Operator OPERATOR, String TOURNAME, String TOURID, Date DATE, Time STARTTIME, int DURATION,
-            String REGION, ArrayList<String> ACTIVITIES, ArrayList<String> ATTRACTIONS, String CITY, int AVAILABILITY,
+    public Tour(Operator OPERATOR, String TOURNAME, String TOURID, Date DATE, int DURATION, String REGION,
+            ArrayList<String> ACTIVITIES, ArrayList<String> ATTRACTIONS, String CITY, int AVAILABILITY,
             Boolean HOTELPICKUP, ArrayList<String> ITINERARY, ArrayList<String> EQUIPMENT, int DIFFICULTY, int MINAGE,
             ArrayList<String> LANGUAGES, ArrayList<String> INCLUDED, ArrayList<String> EXCLUDED, String OTHERINFO,
             Double PRICE) {
@@ -34,10 +35,9 @@ public class Tour {
         this.tourName = TOURNAME;
         this.tourId = TOURID;
         this.date = DATE;
-        this.startTime = STARTTIME;
         this.duration = DURATION;
         this.region = REGION;
-        this.activites = ACTIVITIES;
+        this.activities = ACTIVITIES;
         this.attractions = ATTRACTIONS;
         this.city = CITY;
         this.availability = AVAILABILITY;
@@ -53,7 +53,7 @@ public class Tour {
         this.price = PRICE;
     }
 
-    public String getOperator() {
+    public Operator getOperator() {
         return this.operator;
     }
 
@@ -69,10 +69,6 @@ public class Tour {
         return this.date;
     }
 
-    public Time getStartTime() {
-        return this.startTime;
-    }
-
     public int getDuration() {
         return this.duration;
     }
@@ -85,7 +81,7 @@ public class Tour {
         return this.activities;
     }
 
-    public String getAttractions() {
+    public ArrayList<String> getAttractions() {
         return this.attractions;
     }
 
@@ -93,7 +89,7 @@ public class Tour {
         return this.city;
     }
 
-    public String getAvailability() {
+    public int getAvailability() {
         return this.availability;
     }
 

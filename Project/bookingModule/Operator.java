@@ -1,4 +1,6 @@
-package bookingModule;
+package BookingModule;
+
+import java.util.ArrayList;
 
 public class Operator {
     String name;
@@ -7,13 +9,11 @@ public class Operator {
     String email;
     ArrayList<String> cc;
 
-    public static getOperator() {
-        
-        return Operator;
-    }
-
-    public static setOperator(String opName) {
-        Operator operator = fetchOperator(opName);
-        
+    public Operator(String NAME, String SSN, String ADDRESS, String EMAIL, ArrayList<String> CC) {
+        this.name = NAME;
+        this.ssn = SSN;
+        this.address = ADDRESS;
+        this.email = EMAIL;
+        this.cc = CC;
     }
 }
