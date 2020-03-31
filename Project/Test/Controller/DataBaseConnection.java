@@ -46,18 +46,14 @@ public class DataBaseConnection {
     }
 
     public ArrayList<Trip> searchDates(String date) throws ParseException {
-        ArrayList<Trip> matches = new ArrayList<Trip>();
-        for (int i = 0; i < trips.size(); i++) {
-        }
-        return matches;
-    }
-
-    public ArrayList<Tour> searchName(String s) {
         ArrayList<Tour> matches = new ArrayList<Tour>();
         try {
 
-            Statement st = db.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM tour WHERE tourname = 'Northern Lights'");
+            String stmt = "SELECT * FROM tour WHERE date = ?";
+            PreparedStatement st = db.prepareStatement(stmt);
+            st.clearParameters();
+            st.setString(1, s);
+            ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 Operator operator = new Operator(rs.getString(1), " ", " ", " ", new ArrayList<String>());
 
@@ -66,19 +62,18 @@ public class DataBaseConnection {
                 Date date = Date.valueOf(rs.getString(4));
                 int duration = rs.getInt(5);
                 String region = rs.getString(6);
-                ArrayList<String> activities = Arrays.asList(rs.getArray(7));
-
-                ArrayList<String> attractions = Arrays.asList(rs.getArray(8));
+                ArrayList<String> activities = arrayToArrayList(rs.getArray(7));
+                ArrayList<String> attractions = arrayToArrayList(rs.getArray(8));
                 String city = rs.getString(9);
                 int availability = rs.getInt(10);
                 Boolean hotelPickup = rs.getBoolean(11);
-                ArrayList<String> itinerary = Arrays.asList(rs.getArray(12));
-                ArrayList<String> equipment = Arrays.asList(rs.getArray(13));
+                ArrayList<String> itinerary = arrayToArrayList(rs.getArray(12));
+                ArrayList<String> equipment = arrayToArrayList(rs.getArray(13));
                 int difficulty = rs.getInt(14);
                 int minAge = rs.getInt(15);
-                ArrayList<String> languages = Arrays.asList(rs.getArray(16));
-                ArrayList<String> included = Arrays.asList(rs.getArray(17));
-                ArrayList<String> excluded = Arrays.asList(rs.getArray(18));
+                ArrayList<String> languages = arrayToArrayList(rs.getArray(16));
+                ArrayList<String> included = arrayToArrayList(rs.getArray(17));
+                ArrayList<String> excluded = arrayToArrayList(rs.getArray(18));
                 String otherInfo = rs.getString(19);
                 Double price = rs.getDouble(20);
 
@@ -92,12 +87,53 @@ public class DataBaseConnection {
         } catch (java.sql.SQLException e) {
             System.out.println(e.getMessage());
         }
-        for (int i = 0; i < trips.size(); i++) {
-            String name = trips.get(i).getName();
-            if (name.toLowerCase().contains(s.toLowerCase())) {
-                matches.add(trips.get(i));
+
+        return matches;
+    }
+
+    public ArrayList<Tour> searchName(String s) {
+        ArrayList<Tour> matches = new ArrayList<Tour>();
+        try {
+
+            String stmt = "SELECT * FROM tour WHERE tourname LIKE ?";
+            PreparedStatement st = db.prepareStatement(stmt);
+            st.clearParameters();
+            st.setString(1, s);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                Operator operator = new Operator(rs.getString(1), " ", " ", " ", new ArrayList<String>());
+
+                String tourName = rs.getString(2);
+                String tourId = rs.getString(3);
+                Date date = Date.valueOf(rs.getString(4));
+                int duration = rs.getInt(5);
+                String region = rs.getString(6);
+                ArrayList<String> activities = arrayToArrayList(rs.getArray(7));
+                ArrayList<String> attractions = arrayToArrayList(rs.getArray(8));
+                String city = rs.getString(9);
+                int availability = rs.getInt(10);
+                Boolean hotelPickup = rs.getBoolean(11);
+                ArrayList<String> itinerary = arrayToArrayList(rs.getArray(12));
+                ArrayList<String> equipment = arrayToArrayList(rs.getArray(13));
+                int difficulty = rs.getInt(14);
+                int minAge = rs.getInt(15);
+                ArrayList<String> languages = arrayToArrayList(rs.getArray(16));
+                ArrayList<String> included = arrayToArrayList(rs.getArray(17));
+                ArrayList<String> excluded = arrayToArrayList(rs.getArray(18));
+                String otherInfo = rs.getString(19);
+                Double price = rs.getDouble(20);
+
+                Tour newTour = new Tour(operator, tourName, tourId, date, duration, region, activities, attractions,
+                        city, availability, hotelPickup, itinerary, equipment, difficulty, minAge, languages, included,
+                        excluded, otherInfo, price);
+
+                matches.add(newTour);
             }
+
+        } catch (java.sql.SQLException e) {
+            System.out.println(e.getMessage());
         }
+
         return matches;
     }
 }
