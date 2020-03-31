@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class DatabaseControllerTest {
+
     @Test
     public void testSearch() {
         ArrayList<Trip> trips = db.searchName("horse");

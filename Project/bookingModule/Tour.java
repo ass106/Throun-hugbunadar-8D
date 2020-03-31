@@ -8,8 +8,8 @@ public class Tour {
     Time startTime;
     int duration;
     String region;
-    String[] activities;
-    String[] attractions;
+    ArrayList<String> activities;
+    ArrayList<String> attractions;
     String city;
     int availability;
 }

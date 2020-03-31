@@ -5,7 +5,7 @@ public class Operator {
     String ssn;
     String address;
     String email;
-    String[] cc;
+    ArrayList<String> cc;
 
     public static getOperator() {
         
