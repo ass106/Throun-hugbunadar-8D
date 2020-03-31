@@ -6,4 +6,14 @@ public class Operator {
     String address;
     String email;
     String[] cc;
+
+    public static getOperator() {
+        
+        return Operator;
+    }
+
+    public static setOperator(String opName) {
+        Operator operator = fetchOperator(opName);
+        
+    }
 }

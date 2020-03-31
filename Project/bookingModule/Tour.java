@@ -2,22 +2,14 @@ package bookingModule;
 
 public class Tour {
     Operator operator;
+    String tourName;
+    String tourId;
     Date date;
-    String startTime;
-    Time duration;
+    Time startTime;
+    int duration;
     String region;
     String[] activities;
     String[] attractions;
     String city;
     int availability;
-    Boolean hotelPickup;
-    String[] itinerary;
-    String[] equipment;
-    int difficulty;
-    int minAge;
-    String[] languages;
-    String[] included;
-    String[] excluded;
-    String otherInfo;
-    Double price;
 }
